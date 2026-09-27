@@ -1,0 +1,21 @@
+# Godot 4+ generated data
+.godot/
+/android/
+
+# Godot exports and local editor state
+export_presets.cfg
+*.translation
+*.tmp
+
+# Generated reference material and preview/screenshot output.
+# Rebuild with the Blender tools in tools/ (see README) after pointing
+# MOKUGYO_PICTURES at your own copy of the reference photos.
+tools/crops/
+tools/preview/
+tools/shots/
+reference_photos/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini

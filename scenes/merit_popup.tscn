@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/merit_popup.gd" id="1_popup"]
+
+[sub_resource type="SystemFont" id="SystemFont_cjk"]
+font_names = PackedStringArray("Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", "Source Han Sans SC", "SimHei", "Arial Unicode MS", "Sans-Serif")
+allow_system_fallback = true
+subpixel_positioning = 1
+
+[node name="MeritPopup" type="Label3D"]
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+modulate = Color(1, 0.545, 0.58, 1)
+outline_modulate = Color(1, 0.965, 0.918, 1)
+text = "功德+1"
+font = SubResource("SystemFont_cjk")
+font_size = 42
+outline_size = 16
+script = ExtResource("1_popup")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/frog.gd" id="1_frog"]
+[ext_resource type="PackedScene" path="res://assets/models/frog_mokugyo.glb" id="2_model"]
+[ext_resource type="ConcavePolygonShape3D" path="res://resources/collision/frog_body.res" id="3_body"]
+
+[node name="Frog" type="StaticBody3D" groups=["mokugyo"]]
+script = ExtResource("1_frog")
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="FrogMesh" parent="Model" instance=ExtResource("2_model")]
+
+[node name="Body" type="CollisionShape3D" parent="."]
+shape = ExtResource("3_body")

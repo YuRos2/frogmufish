@@ -1,0 +1,15 @@
+# Normalize text files to LF in the repository regardless of the local
+# core.autocrlf setting, so Godot's .tscn/.tres diff cleanly.
+* text=auto eol=lf
+
+# Binary assets must never be line-ending converted.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.wav binary
+*.ogg binary
+*.glb binary
+*.blend binary
+*.res binary
+*.exr binary
+*.ttf binary
