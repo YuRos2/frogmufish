@@ -1,15 +1,19 @@
 [gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://scripts/frog.gd" id="1_frog"]
-[ext_resource type="PackedScene" path="res://assets/models/frog_mokugyo.glb" id="2_model"]
-[ext_resource type="ConcavePolygonShape3D" path="res://resources/collision/frog_body.res" id="3_body"]
+[ext_resource type="PackedScene" uid="uid://ejxjn3u1d37t" path="res://assets/models/frog_muyu.glb" id="2_model"]
+[ext_resource type="SphereShape3D" path="res://resources/collision/frog_head.tres" id="3_head"]
 
 [node name="Frog" type="StaticBody3D" groups=["mokugyo"]]
 script = ExtResource("1_frog")
 
 [node name="Model" type="Node3D" parent="."]
 
-[node name="FrogMesh" parent="Model" instance=ExtResource("2_model")]
+[node name="Scaled" type="Node3D" parent="Model"]
+transform = Transform3D(0.056512, 0, 0, 0, 0.056512, 0, 0, 0, 0.056512, 0, -0.001801, 0)
 
-[node name="Body" type="CollisionShape3D" parent="."]
-shape = ExtResource("3_body")
+[node name="FrogMesh" parent="Model/Scaled" instance=ExtResource("2_model")]
+
+[node name="Head" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0895, 0)
+shape = ExtResource("3_head")

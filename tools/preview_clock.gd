@@ -12,6 +12,15 @@ var main
 func _ready() -> void:
 	main = load("res://scenes/main.tscn").instantiate()
 	add_child(main)
+	# Deterministic light and weather, so the pomodoro shots do not change with
+	# the hour the tool happens to be run at.
+	main.get_node("Weather").stop()
+	main.get_node("Weather").force_report({
+		"code": 0, "label": "晴", "cloud": 0.05, "wind": 6.0,
+		"temperature": 24.0, "apparent": 23.0, "humidity": 40.0,
+		"city": "预览", "latitude": 39.9042, "longitude": 116.4074,
+	})
+	main.get_node("SkyCycle").pin(11.0, {"code": 0, "cloud": 0.05, "wind": 6.0})
 	await get_tree().create_timer(2.0).timeout
 	await _shot("p0_idle")
 
@@ -23,9 +32,9 @@ func _ready() -> void:
 	await _shot("p5_pond")
 	main._apply_camera()
 
-	# A close-up of the lotus bud mallet, so the flower reads clearly.
-	cam.position = Vector3(0.097, 0.16, 0.20)
-	cam.look_at(main.mallet.global_position + Vector3(0.0, 0.008, 0.0), Vector3.UP)
+	# A close-up of the striker resting horizontally in the frog's mouth.
+	cam.position = main.mallet.global_position + Vector3(0.03, 0.075, 0.14)
+	cam.look_at(main.mallet.global_position, Vector3.UP)
 	await get_tree().create_timer(0.4).timeout
 	await _shot("p6_mallet")
 	main._apply_camera()
@@ -44,7 +53,7 @@ func _ready() -> void:
 	main.pomodoro.resume()
 
 	# Skip the rest of the focus block: this is the real completion show, where
-	# the mallet taps out the difficulty and the confetti follows afterwards.
+	# the mallet taps out the difficulty and the lotus petals follow afterwards.
 	main.pomodoro.skip()
 	await get_tree().create_timer(1.0).timeout
 	await _shot("p2_tap")

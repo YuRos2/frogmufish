@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3]
+[gd_scene load_steps=19 format=3]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="PackedScene" path="res://scenes/frog.tscn" id="2_frog"]
@@ -11,6 +11,9 @@
 [ext_resource type="Script" path="res://scripts/pomodoro.gd" id="10_pomodoro"]
 [ext_resource type="Script" path="res://scripts/pond.gd" id="11_pond"]
 [ext_resource type="Script" path="res://scripts/lotus_leaf.gd" id="12_leaf"]
+[ext_resource type="Script" path="res://scripts/sky_cycle.gd" id="13_sky"]
+[ext_resource type="Script" path="res://scripts/weather.gd" id="14_weather"]
+[ext_resource type="Script" path="res://scripts/weather_fx.gd" id="15_fx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="SkyMat_1"]
 sky_top_color = Color(0.749, 0.89, 0.961, 1)
@@ -83,7 +86,6 @@ script = ExtResource("12_leaf")
 [node name="Frog" parent="." instance=ExtResource("2_frog")]
 
 [node name="Mallet" parent="." instance=ExtResource("3_mallet")]
-transform = Transform3D(0.57305, 0.02473, 0.81915, -0.04311, 0.99907, 0, -0.81839, -0.03531, 0.57358, 0.097, 0.0136, 0.058)
 
 [node name="StrikeAudio" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0)
@@ -118,7 +120,7 @@ max_distance = 8.0
 script = ExtResource("10_pomodoro")
 
 [node name="CameraPivot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.065, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(1, 0, 0, 0, 0.95534, 0.29552, 0, -0.29552, 0.95534, 0, 0.3104, 1.0028)
@@ -127,3 +129,12 @@ near = 0.02
 far = 20.0
 
 [node name="HUD" parent="." instance=ExtResource("4_hud")]
+
+[node name="SkyCycle" type="Node3D" parent="."]
+script = ExtResource("13_sky")
+
+[node name="Weather" type="Node" parent="."]
+script = ExtResource("14_weather")
+
+[node name="WeatherFX" type="Node3D" parent="."]
+script = ExtResource("15_fx")

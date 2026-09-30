@@ -19,7 +19,7 @@ func launch(at: Vector3, drift_x: float) -> void:
 	global_position = at
 	_drift = Vector3(drift_x, 0.0, drift_x * 0.4)
 	_elapsed = 0.0
-	scale = Vector3.ONE * 0.7
+	scale = Vector3.ONE * 0.85
 	modulate.a = 1.0
 	set_process(true)
 
@@ -35,6 +35,6 @@ func _process(delta: float) -> void:
 	global_position = _start + _drift * rise + Vector3(0.0, RISE * rise, 0.0)
 
 	# quick overshoot then settle, then fade out
-	var pop := 0.7 + 1.9 * t if t < 0.20 else maxf(1.0, 1.08 - 0.4 * (t - 0.20))
+	var pop := 0.85 + 2.0 * t if t < 0.20 else maxf(1.0, 1.15 - 0.45 * (t - 0.20))
 	scale = Vector3.ONE * pop
 	modulate.a = clampf(1.0 - pow(t, 2.4), 0.0, 1.0)

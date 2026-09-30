@@ -1,27 +1,13 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/mallet.gd" id="1_mallet"]
-[ext_resource type="Script" path="res://scripts/lotus_mallet.gd" id="2_bud"]
-[ext_resource type="CapsuleShape3D" path="res://resources/collision/mallet_head.tres" id="3_head"]
-[ext_resource type="CapsuleShape3D" path="res://resources/collision/mallet_handle.tres" id="4_shaft"]
+[ext_resource type="PackedScene" uid="uid://ejxjn3u1d37t" path="res://assets/models/frog_muyu.glb" id="2_model"]
 
-[sub_resource type="PhysicsMaterial" id="PhysMat_mallet"]
-friction = 0.9
-bounce = 0.02
-
-[node name="Mallet" type="RigidBody3D"]
-mass = 0.03
-physics_material_override = SubResource("PhysMat_mallet")
-continuous_cd = true
+[node name="Mallet" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.066, 0.041, 0.005)
 script = ExtResource("1_mallet")
 
 [node name="Model" type="Node3D" parent="."]
-script = ExtResource("2_bud")
 
-[node name="Head" type="CollisionShape3D" parent="."]
-transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 0, 0)
-shape = ExtResource("3_head")
-
-[node name="Handle" type="CollisionShape3D" parent="."]
-transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, 0.0945, 0, 0)
-shape = ExtResource("4_shaft")
+[node name="StrikerMesh" parent="Model" instance=ExtResource("2_model")]
+transform = Transform3D(0.039766, 0, -0.068397, 0, 0.079117, 0, 0.068397, 0, 0.039766, 0.187658, -0.060129, -0.031812)

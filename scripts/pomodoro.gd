@@ -21,11 +21,11 @@ signal cycle_changed(completed_focus: int, rounds: int)
 
 const DEMO_SCALE := 60.0
 
-## Default preset: the classic 25 / 5 with a longer 15 minute break every
-## fourth focus block.
-@export var focus_seconds := 25 * 60
-@export var short_break_seconds := 5 * 60
-@export var long_break_seconds := 15 * 60
+## Default preset for younger users: 15 / 3 with a longer 9 minute break every
+## fourth focus block. Presets still offer 25 and 45 minute focus blocks.
+@export var focus_seconds := 15 * 60
+@export var short_break_seconds := 3 * 60
+@export var long_break_seconds := 9 * 60
 @export var rounds_before_long_break := 4
 
 var phase: int = Phase.IDLE
@@ -154,7 +154,7 @@ func completion_taps() -> int:
 
 
 static func difficulty_title(level: int) -> String:
-	return ["轻松", "标准", "深入"][clampi(level, 0, 2)]
+	return ["🌱 轻松", "📚 标准", "🎯 深入"][clampi(level, 0, 2)]
 
 
 func total_duration_for(p: int) -> float:

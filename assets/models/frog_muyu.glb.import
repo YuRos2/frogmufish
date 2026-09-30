@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dpie43fmr074s"
-path="res://.godot/imported/frog_mokugyo.glb-59fb615192a2930d1531d77d4c4e8f96.scn"
+uid="uid://ejxjn3u1d37t"
+path="res://.godot/imported/frog_muyu.glb-8462b24ad2ffdb2dda5f33967291323a.scn"
 
 [deps]
 
-source_file="res://assets/models/frog_mokugyo.glb"
-dest_files=["res://.godot/imported/frog_mokugyo.glb-59fb615192a2930d1531d77d4c4e8f96.scn"]
+source_file="res://assets/models/frog_muyu.glb"
+dest_files=["res://.godot/imported/frog_muyu.glb-8462b24ad2ffdb2dda5f33967291323a.scn"]
 
 [params]
 

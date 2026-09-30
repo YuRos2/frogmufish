@@ -7,13 +7,8 @@ export_presets.cfg
 *.translation
 *.tmp
 
-# Generated reference material and preview/screenshot output.
-# Rebuild with the Blender tools in tools/ (see README) after pointing
-# MOKUGYO_PICTURES at your own copy of the reference photos.
-tools/crops/
-tools/preview/
+# Screenshot output from the preview helpers in tools/ (regenerated on demand).
 tools/shots/
-reference_photos/
 
 # OS / editor noise
 .DS_Store

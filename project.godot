@@ -12,8 +12,10 @@ config_version=5
 
 config/name="Mokugyo Frog Pomodoro"
 config/description="A 3D macaron pomodoro clock above a frog-shaped electronic
-mokugyo. The clock counts focus and break blocks and the frog reacts to each
-phase; pulling the mallet out of the frog's mouth and tapping it earns merit."
+mokugyo rebuilt from the froggreen model. The clock counts focus and break
+blocks and the frog reacts to each phase; the wooden striker rests horizontally
+in the frog's mouth, and a continuous run of 10-20 rhythmic taps chomps the jaw
+and earns merit."
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
@@ -71,6 +73,14 @@ orbit={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":2,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
+
+[mokugyo]
+
+weather/use_network=true
+weather/refresh_minutes=20.0
+weather/latitude=0.0
+weather/longitude=0.0
+weather/city=""
 
 [physics]
 
